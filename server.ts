@@ -1,6 +1,9 @@
 import {server} from "./src";
 
-server.listen(8081 , '0.0.0.0', () => {
+// @ts-ignore
+const PORT = +process.env.PORT || 8080
 
-    console.log(`Server listening at 0.0.0.0:8081`)
+server.listen(PORT , '0.0.0.0', () => {
+
+    console.log(`Server listening at 0.0.0.0:${PORT}`)
 })
