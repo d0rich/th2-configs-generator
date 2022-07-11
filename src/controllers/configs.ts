@@ -1,6 +1,7 @@
 import { Router, Request, Response} from "express";
 
 import fs from 'fs'
+import { onError } from "../utils";
 
 const DEFAULT_VERSION = '1-5-x'
 
@@ -34,10 +35,7 @@ router.get('/versions', async (req: Request, res: Response) => {
             items: versions
         })
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/dashboard.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -49,10 +47,7 @@ router.get('/:version/dashboard.values', checkTh2InfraVersion, async (req: Reque
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/helm-operator.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -62,10 +57,7 @@ router.get('/:version/helm-operator.values', checkTh2InfraVersion, async (req: R
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/ingress.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -75,10 +67,7 @@ router.get('/:version/ingress.values', checkTh2InfraVersion, async (req: Request
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/loki.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -88,10 +77,7 @@ router.get('/:version/loki.values', checkTh2InfraVersion, async (req: Request, r
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/prometheus-operator.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -102,10 +88,7 @@ router.get('/:version/prometheus-operator.values', checkTh2InfraVersion, async (
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/pvcs', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -115,10 +98,7 @@ router.get('/:version/pvcs', checkTh2InfraVersion, async (req: Request, res: Res
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/pvs', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -129,10 +109,7 @@ router.get('/:version/pvs', checkTh2InfraVersion, async (req: Request, res: Resp
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/secrets', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -142,10 +119,7 @@ router.get('/:version/secrets', checkTh2InfraVersion, async (req: Request, res: 
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 router.get('/:version/service.values', checkTh2InfraVersion, async (req: Request, res: Response) => {
@@ -176,10 +150,7 @@ router.get('/:version/service.values', checkTh2InfraVersion, async (req: Request
         res.type('text/yaml')
         res.send(config)
     }
-    catch (e) {
-        res.status(500)
-        res.send(e)
-    }
+    catch (e) { onError({response: res, error: e}) }
 })
 
 
