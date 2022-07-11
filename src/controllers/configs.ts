@@ -42,7 +42,7 @@ router.get('/:version/dashboard.values', checkTh2InfraVersion, async (req: Reque
     try {
         let specifiedVersion = req.params.version
         let config = await getYamlConfig('dashboard.values', specifiedVersion)
-        config = config.replaceAll('<hosts>', req.query['hosts']?.toString() || '');
+        config = config.replace('<hosts>', req.query['hosts']?.toString() || '');
         res.type('text/yaml')
         res.send(config)
     }
