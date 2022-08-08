@@ -1,14 +1,9 @@
 import {H3Event} from "h3";
+import fs from 'fs/promises'
 
 export const getTh2InfraConfigsVersions = async (): Promise<string[]> => {
-  const baseDir = 'src:server:assets:config-templates:th2-infra:'
-  const allFiles: string[] = await useStorage().getKeys(baseDir)
-  const versionsSet = new Set(
-    allFiles
-      .map(f => f.replace(baseDir, ''))
-      .map(f => f.split(':')[0])
-      )
-  return [...versionsSet]
+  const baseDir = 'src:public:config-templates:th2-infra:'
+  return await fs.readdir('public/config-templates/th2-infra')
 }
 
 export async function useTh2InfraVersion({ context }: H3Event) {
