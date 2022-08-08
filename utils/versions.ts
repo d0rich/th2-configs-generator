@@ -1,7 +1,4 @@
-import { Request, Response } from 'express'
 import {H3Event} from "h3";
-
-const DEFAULT_VERSION = '1-5-x'
 
 export const getTh2InfraConfigsVersions = async (): Promise<string[]> => {
   const baseDir = 'src:server:assets:config-templates:th2-infra:'

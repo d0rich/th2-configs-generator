@@ -4,8 +4,7 @@ import {configureConfigResponse} from "../../utils/config";
 export default defineEventHandler(async ({ event }) => {
   const {version} = await configureConfigResponse(event)
   // @ts-ignore
-  const {hosts}: { hosts: string | undefined } = useQuery(event)
-  const config = await getRawConfig('dashboard.values', version)
-  return config.replace('<hosts>', hosts || '')
-  
+  const {'node-name': nodename}: { 'node-name': string | undefined } = useQuery(event)
+  const config = await getRawConfig('pvs', version)
+  return config.replace(/<node-name>/g, nodename || 'minikube')
 })
