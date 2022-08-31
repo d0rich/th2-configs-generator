@@ -17,7 +17,7 @@ Path to the your configuration will be as following: `https://th2-configs-genera
 - `version` - version of th2-infra you want to get configurations for
 - `filename` - name of the configuration file you want to get
 
-You can get list of supported versions of th2-infra in <a href="/api/config/versions" target="_blank">`https://th2.dev/api/config/versions`</a>.
+You can get list of supported versions of th2-infra in https://th2-configs-generator.onrender.com/versions.
 
 If you need to customize final configuration, you can provide parameters by adding `?<parameters>` after the path. Possible parameters are listed for each configuration file.
 
