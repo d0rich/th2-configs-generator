@@ -12,7 +12,7 @@ Here are provided configuration files that you can retrieve with config API. Som
 
 ## How to use it
 
-Path to the your configuration will be as following: `https://th2.dev/api/config/<version>/<filename>`
+Path to the your configuration will be as following: `https://th2-configs-generator.onrender.com/<version>/<filename>`
 
 - `version` - version of th2-infra you want to get configurations for
 - `filename` - name of the configuration file you want to get
@@ -48,7 +48,7 @@ Path to `ingress.values` with no parameters (doesn’t require parameters):
 
 
 ```
-https://th2.dev/api/config/1-5-x/ingress.values 
+https://th2-configs-generator.onrender.com/1-5-x/ingress.values 
 ```
 
 Output:
@@ -74,7 +74,7 @@ controller:
 Path to `service.values` with no parameters (requires parameters):
 
 ```
-https://th2.dev/api/config/1-5-x/service.values 
+https://th2-configs-generator.onrender.com/1-5-x/service.values 
 ```
 
 Output:
@@ -106,7 +106,7 @@ cassandra:
 Path to `service.values` file with specified parameters:
 
 ```
-https://th2.dev/api/config/1-5-x/service.values?repository=git@github.com:ExampleUser/th2-infra-schema.git&host=111.111.1.1&c-host=222.222.2.2&dc=my_dc
+https://th2-configs-generator.onrender.com/1-5-x/service.values?repository=git@github.com:ExampleUser/th2-infra-schema.git&host=111.111.1.1&c-host=222.222.2.2&dc=my_dc
 ```
 
 Output:
