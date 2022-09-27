@@ -1,3 +1,5 @@
+> This project is deprecated as logic is moved to [th2 CLI](https://github.com/d0rich/th2-cli)
+
 # th2-configs-generator
 API for generation config files for th2 installation.
 
